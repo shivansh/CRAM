@@ -14,4 +14,4 @@ with open('output_file.csv') as f:
 	for (i,v) in enumerate(row):
 	    columns[i].append(v)
 
-# print(columns[3])
+print(columns[3])
