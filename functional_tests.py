@@ -10,8 +10,8 @@ class NewTest(unittest.TestCase):
 
     def test_start(self):
         self.browser.get('http://localhost:8000')
-        self.assertIn('To-do', self.browser.title)
-        self.fail('Finish the test')
+        self.assertIn('To-Do lists', self.browser.title)
+        # self.fail('Finish the test')
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
