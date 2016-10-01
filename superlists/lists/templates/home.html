@@ -1,14 +1,27 @@
 <html>
+  <head>
+    <link href="/static/base.css" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  </head>
+
   <title>To-Do lists</title>
+
   <body>
-    <h1>Your To-Do list</h1>
+    <h1>Recommended Courses</h1>
     <form method="POST">
-      <input name="item_text" id="id_new_item" placeholder="Enter a to-do item" />
+      <input name="item_text" id="id_new_item" placeholder="Enter your roll number" />
+      <a class="waves-effect waves-light btn"><input type="submit" id="submit_button" value="">Submit</a>
+      <!--<input type="submit" value="Submit">-->
       {% csrf_token %}
     </form>
     <table id="id_list_table">
       {% for item in items %}
-        <tr><td>{{ item.text  }}</td></tr>
+      <tr><td>{{ item.text }}</td></tr>
       {% endfor %}
     </table>
   </body>
