@@ -9,6 +9,11 @@ class NewTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
+    def check_for_row(self, row_text):
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn(row_text, [row.text for row in rows])
+
     def test_correct_html(self):
         self.browser.get('http://localhost:8000')
         self.assertIn('To-Do lists', self.browser.title)
@@ -29,9 +34,8 @@ class NewTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-                any(row.text == '1: Buy peacock feathers' for row in rows), "todo item did not appear"
-                )
+        self.check_for_row('1: Buy peacock feathers')
+
         # self.fail('Finish the test')
 
 if __name__ == '__main__':
