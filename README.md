@@ -25,6 +25,19 @@ python3 manage.py test functional_tests
 python3 manage.py test lists
 ```
 
+### Running the server
+Run this command from `/superlists/` -
+```
+python3 manage.py runserver
+```
+Visit http://localhost:8000
+
+### Cleaning up the database
+Run this command from `/superlists` -
+```
+rm db.sqlite3 && python3 manage.py migrate --noinput
+```
+
 ## Directory Structure
 ```
 ├── data_mining
