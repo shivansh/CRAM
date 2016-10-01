@@ -1,6 +1,8 @@
 # Google DevFest
 
-## Executing the scripts for data mining
+## Executing the scripts
+
+### Mining the data
 
 For generating the `csv` file -
 ```
@@ -11,6 +13,16 @@ python scrape.py
 For extracting specific columns from the `csv` file -
 ```
 python read-csv.py
+```
+
+### Functional tests
+```
+python3 manage.py test functional_tests
+```
+
+### Unit tests
+```
+python3 manage.py test lists
 ```
 
 ## Directory Structure
