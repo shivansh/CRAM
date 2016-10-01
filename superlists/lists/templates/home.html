@@ -7,22 +7,71 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
+    <script>
+      function hide() {
+        //console.log("hide function called");
+        //if(document.getElementById("id_list_table").innerHTML) {
+        //  console.log("now hidden");
+        //  document.getElementById("dummy_para").visibility == "hidden";
+        //if(document.getElementById("dummy_para").style.visibility == "hidden") {
+          document.getElementById("dummy_para").style.visibility = "visible";
+        //}
+
+        //if(document.getElementById("dummy_para").style.visibility == "visible") {
+        //  document.getElementById("dummy_para").style.visibility = "hidden";
+        //}
+
+        //if(document.getElementById("id_list_table").style.visibility == "hidden") {
+        //  document.getElementById("id_list_table").style.visibility = "visible";
+        //}
+
+        //if(document.getElementById("id_list_table").style.visibility == "visible") {
+          document.getElementById("id_list_table").style.display = "none";
+        //}
+      }
+
+      function print() {
+        document.getElementById("id_list_table").style.visibility = "hidden";
+
+        var temp = "{{temp_list}}"
+        console.log(temp);
+        var toggle = document.getElementById("dummy_para");
+
+        {% for list_item in temp  %}
+          var textnode = document.createTextNode(list_item);
+          toggle.appendChild(textnode)
+        {% endfor %}
+      }
+    </script>
+
   </head>
 
   <title>To-Do lists</title>
 
   <body>
+    <div class="main">
     <h1>Recommended Courses</h1>
     <form method="POST">
       <input name="item_text" id="id_new_item" placeholder="Enter your roll number" />
       <a class="waves-effect waves-light btn"><input type="submit" id="submit_button" value="">Submit</a>
-      <!--<input type="submit" value="Submit">-->
       {% csrf_token %}
     </form>
-    <table id="id_list_table">
-      {% for item in items %}
-      <tr><td>{{ item.text }}</td></tr>
-      {% endfor %}
-    </table>
+      {% if items %}
+
+        <table id="id_list_table" border="1" style="width:100%">
+        {% for item in items %}
+          <tr><td>{{ item }}</td></tr>
+        {% endfor %}
+        </table>
+        <div id="dummy_para" style="visibility:hidden">
+        {% for temp_item in temp_list %}
+          <p>{{ temp_item }}</p>
+        {% endfor %}
+        </div>
+        <a class="waves-effect waves-light btn" onclick="hide()" id="recommend">Recommend</a>
+
+      {% endif %}
+
+  </div>
   </body>
 </html>

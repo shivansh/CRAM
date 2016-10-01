@@ -40,7 +40,7 @@ def scrape(roll):
             for (i,v) in enumerate(row):
                 columns[i].append(v[3:len(v)-2])
 
-    # print(columns[2])
+    # print(columns[2][1:])
     return columns[2]
 
 # scrape(14658)

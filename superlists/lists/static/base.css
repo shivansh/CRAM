@@ -1,8 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+table, td {
+    border: 1px solid black;
+}
+
+.main {
+  text-align: center;
+}
+
 #id_new_item {
   text-align: center;
-  width: 20px;
+  width: 20%;
+}
+
+#id_list_table {
+  text-align: center;
+  margin-left: 43%;
 }
 
 #submit_button {
   text-align: center;
+}
+
+#recommend {
+  margin-bottom: 20px;
 }
