@@ -21,6 +21,11 @@ class HomePageTest(TestCase):
         # self.assertTrue(response.content.strip().endswith(b'</html>'))
         # print (repr(response.content))
 
+    def test_save_item_when_required(self):
+        request = HttpRequest()
+        home_page(request)
+        self.assertEqual(Item.objects.count(), 0)
+
     def test_save_request(self):
         request = HttpRequest()
         request.method = 'POST'
