@@ -34,7 +34,7 @@ class NewTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.check_for_row('1: Buy peacock feathers')
+        self.check_for_row('1. DevFest')
 
         # self.fail('Finish the test')
 
