@@ -9,7 +9,7 @@ class NewTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_start(self):
+    def test_correct_html(self):
         self.browser.get('http://localhost:8000')
         self.assertIn('To-Do lists', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
@@ -21,9 +21,11 @@ class NewTest(unittest.TestCase):
                 'Enter a to-do item'
                 )
 
-        inputbox.send_keys('Buy peacock feathers')
+        inputbox.send_keys('1: Buy peacock feathers')
 
         inputbox.send_keys(Keys.ENTER)
+        # import time
+        # time.sleep(60)
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
