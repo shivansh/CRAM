@@ -1,19 +1,26 @@
-# Google DevFest
+# Google DevFest '16
+
+### Team members
+* [Abhinav Agrawal](https://github.com/abhiagwl)
+* [Karttikeya Mangalam](https://github.com/karttikeya)
+* [Shivansh Rai](https://github.com/shivrai)
+
+## The Idea
+![C.R.A.M](./cram.jpg)
+
+## Dependencies
+* [python3](https://www.python.org/download/releases/3.0/)
+* [django](https://www.djangoproject.com/)
+* [beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
+* [scikit-learn](http://scikit-learn.org/stable/)
+* [pandas](http://pandas.pydata.org/)
+* [numpy](http://www.numpy.org/)
+
+### Tools used
+* [Jupyter Notebook](http://jupyter.org/)
 
 ## Executing the scripts
-
-### Mining the data
-
-For generating the `csv` file -
-```
-python scrape.py
-```
-**output_file.csv** will be generated.
-
-For extracting specific columns from the `csv` file -
-```
-python read-csv.py
-```
+The following commands should be run from `/superlists`
 
 ### Functional tests
 ```
@@ -26,61 +33,49 @@ python3 manage.py test lists
 ```
 
 ### Running the server
-Run this command from `/superlists/` -
+There might possibly be some unapplied migrations when you run the app for the first time which may cause the app to not work properly. Use the following command to apply them.
+```
+python3 manage.py migrate
+```
+
+Finally, run the server.
 ```
 python3 manage.py runserver
 ```
-Visit http://localhost:8000
+The website is served at [localhost:8000](http://localhost:8000)
 
 ### Cleaning up the database
-Run this command from `/superlists` -
 ```
-rm db.sqlite3 && python3 manage.py migrate --noinput
+rm db.sqlite3
+python3 manage.py migrate --noinput
 ```
 
 ## Directory Structure
 ```
 ├── data_mining
-│   ├── output_file.csv
-│   ├── read-csv.py
-│   └── scrape.py
-├── functional_tests.py
+│   └── ..............................:: Data scraping scripts
 ├── README.md
 └── superlists
-    ├── db.sqlite3
+    ├── db.sqlite3 ...................:: Database
+    ├── functional_tests
+    │   └── ..........................:: Functional testing scripts
     ├── lists
     │   ├── admin.py
-    │   ├── __init__.py
-    │   ├── __init__.pyc
+    │   ├── csv
+    │   │   └── ......................:: CSV files
     │   ├── migrations
-    │   │   ├── 0001_initial.py
-    │   │   ├── 0002_item_text.py
-    │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       ├── 0001_initial.cpython-34.pyc
-    │   │       ├── 0002_item_text.cpython-34.pyc
-    │   │       └── __init__.cpython-34.pyc
+    │   ├── kball.py
     │   ├── models.py
-    │   ├── models.pyc
-    │   ├── __pycache__
-    │   │   ├── admin.cpython-34.pyc
-    │   │   ├── __init__.cpython-34.pyc
-    │   │   ├── models.cpython-34.pyc
-    │   │   ├── tests.cpython-34.pyc
-    │   │   └── views.cpython-34.pyc
+    │   ├── scrape_user.py
+    │   ├── static ...................:: Styling files
+    │   │   └── base.css
     │   ├── templates
     │   │   └── home.html
-    │   ├── tests.py
-    │   ├── views.py
-    │   └── views.pyc
+    │   ├── tests.py .................:: Unit testing script
+    │   └── views.py
     ├── manage.py
     └── superlists
         ├── __init__.py
-        ├── __pycache__
-        │   ├── __init__.cpython-34.pyc
-        │   ├── settings.cpython-34.pyc
-        │   ├── urls.cpython-34.pyc
-        │   └── wsgi.cpython-34.pyc
         ├── settings.py
         ├── urls.py
         └── wsgi.py

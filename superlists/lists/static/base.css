@@ -1,3 +1,10 @@
+body {
+  font-family: Roboto Mono
+}
+
+h5 {
+}
+
 h1 {
   text-align: center;
 }
@@ -10,14 +17,14 @@ table, td {
   text-align: center;
 }
 
+#meta {
+  background-color: #f0f0f5;
+  margin-bottom: 0px;
+}
+
 #id_new_item {
   text-align: center;
   width: 20%;
-}
-
-#id_list_table {
-  text-align: center;
-  margin-left: 43%;
 }
 
 #submit_button {

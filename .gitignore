@@ -1,3 +1,6 @@
 superlists/db.sqlite3
 *.pyc
 superlists/__pycache__/
+superlists/lists/output.csv
+superlists/output.csv
+data_mining/output_file.csv
