@@ -1,4 +1,9 @@
 superlists/db.sqlite3
 *.pyc
 superlists/__pycache__/
+<<<<<<< 7759476dba5ac00de6635a6c59fea5e0cc94bffb
 *.csv
+=======
+superlists/lists/output.csv
+superlists/output.csv
+>>>>>>> Add styling to the main page

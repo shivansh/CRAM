@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <link href="/static/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <script>
+      function toggle() {
+          document.getElementById("recommendations").style.display = "block";
+          document.getElementById("id_list_table").style.display = "none";
+          document.getElementById("recommend_button").style.display = "none";
+      }
+
+    </script>
+
+  </head>
+
+  <title>C.R.A.M</title>
+
+  <body>
+    <div class="main">
+      <h1>C.R.A.M</h1>
+    <form method="POST">
+      <input name="item_text" id="id_new_item" placeholder="Enter your roll number" required />
+      <br>
+      <button class="btn waves-effect waves-light lighten-3" type="submit">Submit</button>
+      {% csrf_token %}
+    </form>
+
+      {% if items %}
+        <div id="id_list_table">
+          <br>
+          <h5><u>Some of your recent courses</u></h5>
+          <ul>
+        {% for item in items %}
+          <p>{{ item }}</p>
+        {% endfor %}
+        <br>
+        </div>
+        <div id="recommendations" style="display:none">
+          <br>
+          <h5><u>Recommend courses for {{roll_no }}</u></h3>
+        {% for course in recommended_courses %}
+          <p>{{ course }}</p>
+        {% endfor %}
+        <br>
+        </div>
+        <a class="waves-effect waves-light btn" id="recommend_button" onclick="toggle()" id="recommend">Recommend courses</a>
+        <br><br>
+
+        <div id="meta">
+          <br>
+          <p> Hello, we are C.R.A.M. We recommend courses for you to take in your next semester based on your coursework. We'll soon be adding more features, stay tuned.</p>
+          <br>
+        </div>
+
+      {% endif %}
+
+  </div>
+
+  </body>
+</html>

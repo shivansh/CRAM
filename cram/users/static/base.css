@@ -20,6 +20,7 @@ table, td {
 #meta {
   background-color: #f0f0f5;
   margin-bottom: 0px;
+<<<<<<< 7759476dba5ac00de6635a6c59fea5e0cc94bffb:cram/users/static/base.css
 }
 
 #id_new_item {
@@ -27,6 +28,14 @@ table, td {
   width: 20%;
 }
 
+=======
+}
+#id_new_item {
+  text-align: center;
+  width: 20%;
+}
+
+>>>>>>> Add styling to the main page:superlists/lists/static/base.css
 #submit_button {
   text-align: center;
 }
