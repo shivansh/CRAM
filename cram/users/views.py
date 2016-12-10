@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from lists.models import Item
-from lists.scrape_user import scrape
-from lists.kball import kmfunc
+from users.models import Item
+from users.scrape_user import scrape
+from users.kball import kmfunc
 
 def home_page(request):
     roll_no = ''

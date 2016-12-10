@@ -1,4 +1,4 @@
-# Google DevFest '16
+# CRAM - Google DevFest '16
 
 ### Team members
 * [Abhinav Agrawal](https://github.com/abhiagwl)
@@ -20,7 +20,7 @@
 * [Jupyter Notebook](http://jupyter.org/)
 
 ## Executing the scripts
-The following commands should be run from `/superlists`
+The following commands should be run from `/cram`
 
 ### Functional tests
 ```
@@ -29,7 +29,7 @@ python3 manage.py test functional_tests
 
 ### Unit tests
 ```
-python3 manage.py test lists
+python3 manage.py test users
 ```
 
 ### Running the server
@@ -45,6 +45,7 @@ python3 manage.py runserver
 The website is served at [localhost:8000](http://localhost:8000)
 
 ### Cleaning up the database
+**Update:** This is no longer required, recommendations are now generated on the fly.
 ```
 rm db.sqlite3
 python3 manage.py migrate --noinput
@@ -55,11 +56,11 @@ python3 manage.py migrate --noinput
 ├── data_mining
 │   └── ..............................:: Data scraping scripts
 ├── README.md
-└── superlists
+└── cram
     ├── db.sqlite3 ...................:: Database
     ├── functional_tests
     │   └── ..........................:: Functional testing scripts
-    ├── lists
+    ├── users
     │   ├── admin.py
     │   ├── csv
     │   │   └── ......................:: CSV files
@@ -74,7 +75,7 @@ python3 manage.py migrate --noinput
     │   ├── tests.py .................:: Unit testing script
     │   └── views.py
     ├── manage.py
-    └── superlists
+    └── cram
         ├── __init__.py
         ├── settings.py
         ├── urls.py
