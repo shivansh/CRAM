@@ -1,4 +1,5 @@
 # CRAM - Google DevFest '16
+***Automated modelling for course recommendations***
 
 ### Team members
 * [Abhinav Agrawal](https://github.com/abhiagwl)
